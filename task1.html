@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 — Code Breaker</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/task1.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1>Code Breaker</h1>
+      <p class="subtitle">Crack the secret code. Digits never repeat.</p>
+    </header>
+ 
+    <section id="game-panel" class="panel">
+      <div id="secret" class="secret" aria-label="Secret code"></div>
+ 
+      <div class="stats">
+        <p>Attempts left: <strong id="attempts-left"></strong></p>
+        <div id="attempt-pips" class="pips" aria-hidden="true"></div>
+      </div>
+ 
+      <form id="guess-form" class="guess-form">
+        <label for="guess-input">Your guess</label>
+        <div class="row">
+          <input id="guess-input" type="text" inputmode="numeric" autocomplete="off"
+                 aria-describedby="message">
+          <button id="guess-btn" class="btn" type="submit">Check</button>
+        </div>
+      </form>
+ 
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+ 
+      <button id="restart-btn" class="btn btn-secondary" type="button">New game</button>
+    </section>
+ 
+    <section class="panel">
+      <h2>History</h2>
+      <p id="history-empty" class="empty">No guesses yet.</p>
+      <table class="history">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Guess</th>
+            <th>Right place</th>
+            <th>Wrong place</th>
+          </tr>
+        </thead>
+        <tbody id="history-body"></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

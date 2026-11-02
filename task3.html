@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 — Ticket Builder</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/task3.js" defer></script>
+</head>
+<body>
+  <main class="container container--wide">
+    <header class="page-header">
+      <h1>Ticket Builder</h1>
+      <p class="subtitle">Fill in the form. The ticket preview updates while you type.</p>
+    </header>
+ 
+    <div class="layout layout--form">
+      <section class="panel">
+        <p id="error-summary" class="error-summary is-hidden" role="alert"></p>
+ 
+        <form id="ticket-form">
+          <div class="form-grid">
+            <div class="form-field form-field--full">
+              <label for="event">Event <span class="req">*</span></label>
+              <select id="event" class="control" required aria-describedby="event-error"></select>
+              <p id="event-error" class="error-text"></p>
+            </div>
+ 
+            <div class="form-field">
+              <label for="date">Date <span class="req">*</span></label>
+              <input id="date" class="control" type="date" required
+                     aria-describedby="date-hint date-error">
+              <p id="date-hint" class="hint"></p>
+              <p id="date-error" class="error-text"></p>
+            </div>
+ 
+            <div class="form-field">
+              <label for="type">Ticket type <span class="req">*</span></label>
+              <select id="type" class="control" required aria-describedby="type-error"></select>
+              <p id="type-error" class="error-text"></p>
+            </div>
+ 
+            <div class="form-field">
+              <label for="quantity">Quantity <span class="req">*</span></label>
+              <input id="quantity" class="control" type="number" min="1" max="10" step="1"
+                     required aria-describedby="quantity-error">
+              <p id="quantity-error" class="error-text"></p>
+            </div>
+ 
+            <div class="form-field">
+              <label for="promo">Promo code <span class="optional">(optional)</span></label>
+              <input id="promo" class="control" type="text" maxlength="20" autocomplete="off"
+                     aria-describedby="promo-error">
+              <p id="promo-error" class="error-text"></p>
+            </div>
+ 
+            <div class="form-field">
+              <label for="name">Full name <span class="req">*</span></label>
+              <input id="name" class="control" type="text" minlength="5" maxlength="60"
+                     autocomplete="name" required aria-describedby="name-error">
+              <p id="name-error" class="error-text"></p>
+            </div>
+ 
+            <div class="form-field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input id="email" class="control" type="email" maxlength="80"
+                     autocomplete="email" required aria-describedby="email-error">
+              <p id="email-error" class="error-text"></p>
+            </div>
+          </div>
+ 
+          <button class="btn btn-wide" type="submit">Book tickets</button>
+        </form>
+      </section>
+ 
+      <aside class="side">
+        <h2>Preview</h2>
+        <div id="preview"></div>
+ 
+        <section id="result" class="result is-hidden">
+          <h2 id="result-title" tabindex="-1">Your ticket is booked!</h2>
+          <div id="result-ticket"></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

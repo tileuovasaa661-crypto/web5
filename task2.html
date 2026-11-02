@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 — Cinema Seats</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/task2.js" defer></script>
+</head>
+<body>
+  <main class="container container--wide">
+    <header class="page-header">
+      <h1>Cinema Seats</h1>
+      <p class="subtitle">Click a seat to select it, click again to remove it.</p>
+    </header>
+ 
+    <div class="layout">
+      <section class="panel">
+        <div class="filters">
+          <div class="field">
+            <label for="zone-filter">Zone</label>
+            <select id="zone-filter" class="control">
+              <option value="all">All zones</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="seat-search">Find a row or seat</label>
+            <input id="seat-search" class="control" type="search"
+                   placeholder="e.g. C or C5" autocomplete="off">
+          </div>
+        </div>
+ 
+        <div class="screen">Screen</div>
+        <div id="hall" class="hall"></div>
+        <p id="hall-empty" class="empty is-hidden">No seats match your search.</p>
+        <ul id="legend" class="legend"></ul>
+      </section>
+      
+      <aside class="panel">
+        <h2>Your seats</h2>
+        <p class="summary-line">Selected: <strong id="selected-count"></strong></p>
+        <ul id="selected-list" class="chips"></ul>
+        <p id="selected-empty" class="empty">No seats selected yet.</p>
+        <p class="total">Total: <strong id="total"></strong></p>
+ 
+        <div class="best">
+          <label for="best-count">Seats together</label>
+          <div class="row">
+            <input id="best-count" class="control" type="number" min="1" value="2">
+            <button id="best-btn" class="btn" type="button">Best seats</button>
+          </div>
+        </div>
+ 
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+ 
+        <div class="actions">
+          <button id="book-btn" class="btn" type="button">Book</button>
+          <button id="clear-btn" class="btn btn-secondary" type="button">Clear</button>
+        </div>
+        <button id="reset-btn" class="btn btn-link" type="button">Reset hall</button>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
